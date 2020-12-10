@@ -1,0 +1,133 @@
+<!--
+<div class = "container mt-3" style = "border: 2px solid pink;">
+
+  <div class = "row">
+      <div class = "col-sm-5">
+         <img src = "https://www.awesomecuisine.com/wp-content/uploads/2007/11/pav_bhaji_recipe.jpg" width="250" height="150">
+      </div>
+
+      <div class = "col-sm-7">
+          <div class = "container">
+            Pav bhaji is a fast food dish from India. It consists of a thick vegetable curry served with a soft bread roll. Vegetables in the curry may include potatoes, onions, carrots, chillies, peas, bell peppers, and tomatoes.
+            Its origins are in the state of Maharashtra.
+          </div>
+      </div>
+  </div>
+</div>
+-->
+
+<div class="container mt-4" (click) = "open(sold)" style = "cursor:pointer;">
+  <div class="card">
+    <div class="card-body">
+    <div class ="row">
+
+    <div class ="col-sm-4">
+    	<img class="card-img-top" [src]="this.urlToImage" alt="Card image" style="width:100%">
+    </div>
+
+    <div class = "col-sm-8" style ="padding-top: auto;">
+      <p class="card-text" [innerHTML] = "this.title"></p>
+    </div>
+    </div>
+    </div>
+  </div>
+  </div>
+
+<!--
+  <ng-template #sold let-modal>
+    <div class="modal-header" style = "border: 2px solid pink;">
+
+      <h3 id="modal-basic-title" style = "border: 2px solid red;">{{this.headline}}</h3>
+
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')" style ="outline: none;">
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+
+    <br/>
+
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="dateOfBirth">Current Price: </label>  <span> {{this.title}} </span>
+          <div class = "input-group">
+            <span style ="margin-top: 9px;">Quantity</span> &nbsp;
+
+  </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+  <div class = "container">
+      <div class = "row">
+        <div class = "col" style = "padding-top: 5px;">
+
+  </div>
+    <div class ="col text-right">
+  </div>
+     </div>
+     </div>
+    </div>
+  </ng-template>
+-->
+
+
+<ng-template #sold let-modal>
+
+
+  <div class="modal-header d-block">
+    <div class =  "d-flex">
+    <h1 id="modal-basic-title">{{this.sourceName}}</h1>
+
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')" style ="outline: none;">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <h3 class = "modal-title">{{this.dateString}}</h3>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+
+        <h2>{{this.title}} </h2>
+
+        <h3 [innerHTML] = "this.description"></h3>
+
+        <h4> For more details click <a [href] = "this.url" target="_blank">here</a></h4>
+
+      </div>
+
+    </form>
+  </div>
+  <div class="modal-footer justify-content-left">
+    <div class = "container" style = "padding: 10px;">
+    <h3>Share</h3>
+      <div>
+        <a class="twitter-share-button"
+        [href]="this.twitterURL">
+        <i class="fa fa-twitter" style="font-size:48px;color:rgb(72,179,245)"></i>
+      </a>
+
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your share button code -->
+      <div class="fb-share-button"
+      data-href="https://www.your-domain.com/your-page.html"
+      data-layout="button_count">
+      </div>
+
+
+      </div>
+
+
+   </div>
+  </div>
+</ng-template>

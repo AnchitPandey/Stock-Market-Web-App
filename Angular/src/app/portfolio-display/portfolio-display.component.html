@@ -1,0 +1,11 @@
+<br>
+<br>
+
+<p class = "container text-center" *ngIf = "this.isEmpty" style = "background-color: rgb(254,243,203); border-radius: 4px; padding: 6px;">Currently you don't have any stock in your portfolio.</p>
+
+<div class ="container mt-4" *ngIf = "!this.isEmpty">
+
+  <div class ="mat-display-2">My Portfolio</div>
+  <app-portfolio *ngFor = "let item of this.portList" [itemElement] = "item" (buyOutput) = "updater()" (sellOutput) = "updater()" > </app-portfolio>
+
+</div>

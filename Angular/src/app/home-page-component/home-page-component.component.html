@@ -1,0 +1,41 @@
+<div class = "container" style = "margin-top: 100px;">
+<h1 class="mat-display-3 text-center" style = "font-weight: 550;">STOCK SEARCH</h1>
+
+<!--
+<div class = "container text-center">
+
+  <input type = "text"  style = "border: 3px solid rgb(111,79,251); height: 40px; width: 220px; border-radius: 25px; outline: none;" placeholder="Enter Stock Name"/>
+  <button class="btn bg-white" type="button" style="z-index: -100;" >
+    <i class="fa fa-search"></i>
+  </button>
+</div>
+-->
+
+<form>
+
+<div class = "container text-center">
+  <div style = "padding: 5px; border: 3px solid rgb(111,79,251); border-radius: 25px;display: inline-block;">
+  <input type = "text" [matAutocomplete]="auto" [formControl] = "searchMoviesCtrl" matInput style = "height: 20px; width: 150px; outline: none; border: none;" placeholder="Enter Stock Name"/>
+  <button class="btn bg-white" type="button" style="border: none;" (click) = "onSearchTicker(searchMoviesCtrl.value)">
+    <i class="fa fa-search" style = "color:rgb(111,79,251)"></i>
+  </button>
+
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngIf="isLoading" class="is-loading"><mat-spinner [diameter] = "30"></mat-spinner></mat-option>
+    <ng-container *ngIf="!isLoading">
+      <mat-option *ngFor="let movie of filteredMovies" [value]="movie.ticker">
+        <span><b>{{movie.ticker}}</b> | {{movie.name}}</span>
+      </mat-option>
+    </ng-container>
+    <!--
+    <mat-option *ngFor="let option of options" [value]="option">
+      {{option}}
+    </mat-option> -->
+
+  </mat-autocomplete>
+</div>
+</div>
+
+</form>
+
+</div>

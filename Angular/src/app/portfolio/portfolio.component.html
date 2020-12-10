@@ -1,0 +1,178 @@
+<!--<div class ="container mt-3" style= "border: 1px solid grey;">
+  <div class ="container-fluid" style ="background-color: rgb(220,220,220);">
+    <span class ="mat-title">AMZN</span> &nbsp;
+    <span class ="mat-subheading-1">Amazoncom Inc</span>
+  </div>
+
+  <div class = "container" >
+      <div class = "row">
+          <div class ="col">
+              <div class ="container">
+                  <div class = "row">
+                      <div class ="col text-left">
+                          <div>Quantity:</div>
+                          <div>Avg. Cost/ Share: </div>
+                          <div>Total Cost:</div>
+                      </div>
+                      <div class ="col text-right">
+                        <div>25</div>
+                        <div>3209.655</div>
+                        <div>80241.375</div>
+                    </div>
+                    </div>
+                </div>
+
+          </div>
+
+          <div class ="col">
+            <div class ="container">
+              <div class = "row">
+                  <div class ="col text-left">
+                      <div>Change:</div>
+                      <div>Current Price: </div>
+                      <div>Market Value:</div>
+                  </div>
+                  <div class ="col text-right">
+                    <div>-6.545</div>
+                    <div>3203.11</div>
+                    <div>80077.75</div>
+                </div>
+                </div>
+            </div>
+
+          </div>
+      </div>
+    </div>
+
+  <div class ="text-right" style ="background-color: rgb(220,220,220); padding: 10px;">
+      <button class = "btn btn-primary">Buy</button> &nbsp;
+      <button class = "btn btn-danger">Sell</button>
+  </div>
+</div> -->
+
+
+<div class ="container mt-3" style= "border: 1px solid grey;">
+  <div style ="background-color: rgb(220,220,220); padding: 7px;">
+    <span class ="mat-title">{{this.ticker}}</span> &nbsp;
+    <span class ="mat-subheading-1">{{this.companyName}}</span>
+  </div>
+
+   <!-- <div class = "container-fluid"> -->
+      <div class = "row">
+          <div class ="col-sm-6" style = "padding: 7px;">
+              <div>
+                  <span>Quantity:</span>
+                  <span class = "float-right">{{this.quantity}}</span>
+              </div>
+
+            <div>
+                <span>Avg. Cost/ Share:</span>
+                <span class = "float-right">{{this.avg}}</span>
+            </div>
+
+
+            <div>
+                <span>Total Cost:</span>
+                <span class = "float-right">{{this.total}}</span>
+            </div>
+          </div>
+            <div class = "col-sm-6" style = "padding: 7px;" [ngStyle] = "{color:getColor()}">
+              <div>
+                <span>Change:</span>
+                <span class = "float-right">  <svg style = "padding-bottom: 4px;" *ngIf = "this.change > 0" width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-caret-up-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+                  </svg>
+
+                  <svg style = "padding-bottom: 4px;" *ngIf = "this.change < 0" width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-caret-down-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                  </svg> {{this.change}} </span>
+
+            </div>
+
+          <div>
+              <span>Current Price:</span>
+              <span class = "float-right">{{this.lastPrice}}</span>
+          </div>
+
+          <div>
+              <span>Market Value:</span>
+              <span class = "float-right">{{this.marketValue}}</span>
+          </div>
+
+            </div>
+
+        </div>
+       <!--         </div> -->
+
+  <div class ="text-right" style ="background-color: rgb(220,220,220); padding: 10px;">
+      <button class = "btn btn-primary" (click) = "open(buyit)">Buy</button> &nbsp;
+      <button class = "btn btn-danger" (click) = "open(sellit)">Sell</button>
+  </div>
+
+</div>
+
+
+<ng-template #buyit let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{this.ticker}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')" style ="outline: none;">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="dateOfBirth">Current Price: </label>  <span> {{this.lastPrice}} </span>
+        <div class = "input-group">
+          <span style ="margin-top: 9px;">Quantity</span> &nbsp;
+          <input type = "number" name ="anyrandomname" class ="form-control" [(ngModel)] = "buyer"/>
+</div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+<div class = "container">
+    <div class = "row">
+      <div class = "col" style = "padding-top: 5px;">
+  Total: {{this.lastPrice * this.buyer}}
+</div>
+  <div class ="col text-right">
+   <button type="button" [disabled] = "this.buyer <= 0" class="btn btn-success" (click)="modal.close('Buy')">Buy</button>
+</div>
+   </div>
+   </div>
+  </div>
+</ng-template>
+
+
+<ng-template #sellit let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{this.ticker}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')" style ="outline: none;">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="dateOfBirth">Current Price: </label>  <span> {{this.lastPrice}} </span>
+        <div class = "input-group">
+          <span style ="margin-top: 9px;">Quantity</span> &nbsp;
+          <input type = "number" name ="anyrandomname1" class ="form-control" [(ngModel)] = "seller"/>
+</div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+<div class = "container">
+    <div class = "row">
+      <div class = "col" style = "padding-top: 5px;">
+  Total: {{this.lastPrice * this.seller}}
+</div>
+  <div class ="col text-right">
+   <button type="button" [disabled] = "this.seller > this.quantity || this.seller <=0" class="btn btn-success" (click)="modal.close('Sell')">Sell</button>
+</div>
+   </div>
+   </div>
+  </div>
+</ng-template>

@@ -1,0 +1,5 @@
+input[type="text"]::placeholder {
+
+  padding-left: 15px;
+
+}

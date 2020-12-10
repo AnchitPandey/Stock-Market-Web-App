@@ -1,0 +1,69 @@
+<div class = "d-flex flex-column min-vh-100">
+<nav class="navbar navbar-expand-md navbar-fixed-top" style ="background-color: rgb(111,79,251);">
+
+  <a (click) ="chalMaiChala()" class = "navbar-brand"  href = "#" style ="color:white;"> Stock Search</a>
+
+
+  <button class="navbar-toggler" style ="color: white;" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+    &#9776;
+  </button>
+
+  <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse ml-auto">
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item text-right" >
+      <a class="nav-link" (mouseenter) = "hover1()" (mouseleave) = "leave1()"><button class ="btn" style ="color: 	#DCDCDC; border-radius: 15px;" #searchButton (click) = "searchClicked()"> Search </button></a>
+    </li>
+    <li class="nav-item text-right">
+      <a class="nav-link" (mouseenter) = "hover2()" (mouseleave) = "leave2()"><button class = "btn" style ="color:	#DCDCDC; border-radius: 15px;" #watchListButton (click) = "watchListClicked()">Watchlist </button></a>
+    </li>
+    <li class="nav-item text-right">
+      <a class="nav-link" (mouseenter) = "hover3()" (mouseleave) = "leave3()"><button class = "btn" style ="color:	#DCDCDC; border-radius: 15px;" #portfolioButton (click) = "portfolioClicked()">Portfolio </button></a>
+    </li>
+  </ul>
+
+</div>
+</nav>
+
+
+<div class= "container">
+    <router-outlet></router-outlet>
+</div>
+
+
+<footer class = "mt-auto">
+   <div class ="container-fluid text-center footerClass">
+     <p style = "padding-top: 3px;">Powered by Tiingo. Developed by Anchit Pandey. </p>
+   </div>
+</footer>
+
+
+<!--
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Pricing</a>
+              </li>
+          </ul>
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ url('/login') }}">Login</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ url('/register') }}">Register</a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+</div>
+-->
