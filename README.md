@@ -4,4 +4,3 @@ This app allows the user to query an organzation and view its stock details. I d
 
 
 
-![Autocomplete_auto_x1](https://user-images.githubusercontent.com/40236708/106423857-1471ea00-6416-11eb-8152-7cb0179c322d.jpg)
