@@ -24,7 +24,7 @@ As the user clicks the News Tab, he is shown the latest news of the organization
 
 ### 4. Details View - Organization Yearly Stock Summary
 
-Once the user clicks on the charts tab, I send Get Request to HighStock API to show the stock details past 4 years as shown in figure below. The user can filter this view by months (1,3,6), weeks and years
+Once the user clicks on the charts tab, I send Get Request to HighStock API to show the stock details like Open Price, Low Price, High Price, Close Price and Volume past 4 years as shown in figure below. The user can filter this view by months (1,3,6), weeks and years
 
 ![Details Page - Charts](https://user-images.githubusercontent.com/40236708/108009558-d8af5680-6fb7-11eb-9c02-d1f9cf26370b.JPG)
 
