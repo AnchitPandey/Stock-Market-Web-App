@@ -29,7 +29,10 @@ Once the user clicks on the charts tab, I send GET Request to HighStock API and 
 
 ![Details Page - Charts](https://user-images.githubusercontent.com/40236708/108009558-d8af5680-6fb7-11eb-9c02-d1f9cf26370b.JPG)
 
+### 5. Watchlist View
+If the user clicks on Watchlist in the navbar or simply types the url, he is shown a list of companies sorted in ascending order by their stock symbol and the corresponding latest stock data. In the details page as shown below, when the user clicks on the star icon, an alert is shown for 5 seconds notifying that the stock has been added to the watchlist. To achive this, I add the companies in the localStorage and make GET requests to the Tiingo API to display the latest data once the user clicks on watchlist component. As shown in figures below, I have also added validation to display whenever there are no stocks present in the watchlist.  
 
+![Watchlist - Full](https://user-images.githubusercontent.com/40236708/108014085-f97ca980-6fc1-11eb-94f3-caa3c4cd6c0a.JPG)
 
 
 
