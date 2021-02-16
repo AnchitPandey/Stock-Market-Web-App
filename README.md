@@ -36,6 +36,8 @@ If the user clicks on Watchlist in the navbar or simply types the url, he is sho
 ![Watchlist- Empty](https://user-images.githubusercontent.com/40236708/108014924-e4087f00-6fc3-11eb-8608-ecddd4d485c7.JPG)
 ![notification](https://user-images.githubusercontent.com/40236708/108015654-8d03a980-6fc5-11eb-81e5-fc521a32072c.JPG)
 
+### 6. Portfolio View
+If the user clicks on the portfolio button in the navbar, he can view the sorted list of companies stock details and the quantity of stocks he purchased. Again for this, as user clicks buy button in the details page, I store the company and the quantity of stock purchased in the localStorage. While displaying, I read the list from localStorage. I also use validation to display appropriate message if the portfolio is empty. In this view, the user can buy or sell stocks in portfolio. When the user clicks on buy button, he sees an alert as shown in the figure below. The same alert appears when the user clicks on sell button.
 
 
 
