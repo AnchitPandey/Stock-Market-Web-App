@@ -18,6 +18,7 @@ Once the user clicks on search button from above image, the stock details of tha
 ### 3. Details View - Organization News
 
 As the user clicks the News Tab, he is shown the latest news of the organization as shown in the figure below. I send GET request to NewsAPI to get top 20 latest news. Further if the user clicks on any of the news, a dialogue pops up as shown below and the user can share the news on Twitter and Facebook. He can also view the entire news once he clicks "here"
+
 ![Details Page - Summary](https://user-images.githubusercontent.com/40236708/108008649-aac91280-6fb5-11eb-9019-83c3ea367562.JPG)
 ![News Share](https://user-images.githubusercontent.com/40236708/108008738-ea8ffa00-6fb5-11eb-81fe-a3289b0389cf.JPG)
 
