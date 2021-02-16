@@ -9,6 +9,11 @@ As soon as user begins typing the stock symbol, a list of options with similar p
 
 ![Autocomplete](https://user-images.githubusercontent.com/40236708/108006338-0ee8d800-6fb0-11eb-8ad6-bcacb3c483ac.JPG)
 
+### 2. Details View - Organization Summary
+Once the user clicks on search button from above image, the stock details of that organization are displayed as shown in the image below. These details are updated every 15 seconds when the market is open. If the market is close then the last stock values are displayed. To achieve this, I send GET request to Tiingo API to fetch stock data and HighStock API to get chart data. To get periodic data in 15 second intervals, I used interval function and subscribed to the request.     
+
+![Details Page - Summary](https://user-images.githubusercontent.com/40236708/108007532-1362c000-6fb3-11eb-86a2-6bde738622a8.JPG)
+
 
 
 
