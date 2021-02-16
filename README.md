@@ -34,6 +34,8 @@ If the user clicks on Watchlist in the navbar or simply types the url, he is sho
 
 ![Watchlist - Full](https://user-images.githubusercontent.com/40236708/108014085-f97ca980-6fc1-11eb-94f3-caa3c4cd6c0a.JPG)
 ![Watchlist- Empty](https://user-images.githubusercontent.com/40236708/108014924-e4087f00-6fc3-11eb-8608-ecddd4d485c7.JPG)
+![Watchlist- Empty](https://user-images.githubusercontent.com/40236708/108015515-47df7780-6fc5-11eb-9b13-1299284ddbd3.JPG)
+
 
 
 
